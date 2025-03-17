@@ -1,74 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-  <h1>Serikbek Bekarys</h1>
-  <img src="your-image.jpg" alt="Portfolio Image" width="200">
-  <p>This is a short information about me.</p>
-  <p>Here are some information about my work.</p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои ссылки</title>
-    <style>
-        .button-container {
-            display: flex;
-            gap: 10px; /* Отступы между кнопками */
-        }
-    </style>
-</head>
-<body>
-    <h1>Мои ссылки</h1>
-
-    <div class="button-container">
-        <button id="contactsButton">Мои контакты</button>
-        <button id="projectsButton">Мои проекты</button>
-        <button id="aboutButton">Обо мне</button>
-        <button id="extraButton">Дополнительная ссылка</button>
-    </div>
-
-    <script>
-        document.getElementById('contactsButton').addEventListener('click', function() {
-            window.location.href = 'https://example.com/contacts';
-        });
-
-        document.getElementById('projectsButton').addEventListener('click', function() {
-            window.location.href = 'https://example.com/projects';
-        });
-
-        document.getElementById('aboutButton').addEventListener('click', function() {
-            window.location.href = 'https://example.com/about';
-        });
-
-        document.getElementById('extraButton').addEventListener('click', function() {
-            window.location.href = 'https://example.com/extra';
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links and Paragraphs</title>
+    <title>Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
-        #content {
-            margin-top: 20px;
+        .green-text {
+            color: green;
         }
     </style>
 </head>
 <body>
-    <h2>Useful Links</h2>
-    <a href="https://www.google.com" target="_blank">Google</a> | 
-    <a href="https://www.youtube.com" target="_blank">YouTube</a> | 
-    <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+    <h1 id="name">Serikbek Bekarys</h1>
+    <img src="a1.jfif" width="350px"/>
+    <p id="info1">This is a short information about me.</p>
+    <p id="extraInfo"></p> <!-- Дополнительный блок для нового текста -->
+    <p id="info2">Here are some information about my work.</p>
+    
+    <button onclick="toggleLanguage()">Change Language</button>
+    <button onclick="toggleTextColor()">Change Text Color</button>
+
+    <script>
+        let isEnglish = true;
+
+        function toggleLanguage() {
+            const name = document.getElementById('name');
+            const info1 = document.getElementById('info1');
+            const info2 = document.getElementById('info2');
+            const extraInfo = document.getElementById('extraInfo');
+
+            if (isEnglish) {
+                name.textContent = 'Серикбек Бекарыс';
+                info1.textContent = 'Это краткая информация обо мне.';
+                extraInfo.textContent = '1. Я очень харизматичный. 2. Ученик 10А класса школы БИЛ города Астана. 3. На фотографии стоит мой дорогой одноклассник Искандер.';
+                info2.textContent = 'Вот некоторая информация о моей работе.';
+            } else {
+                name.textContent = 'Serikbek Bekarys';
+                info1.textContent = 'This is a short information about me.';
+                extraInfo.textContent = '1. I am very charismatic. 2. A student of the 10A class of the BIL school in Astana. 3. In the photo is my dear classmate Iskander';
+                info2.textContent = 'Here are some information about my work.';
+            }
+
+            isEnglish = !isEnglish;
+        }
+
+        function toggleTextColor() {
+            const elements = [document.getElementById('name'), document.getElementById('info1'), document.getElementById('extraInfo'), document.getElementById('info2')];
+            elements.forEach(element => {
+                element.classList.toggle('green-text');
+            });
+        }
+    </script>
     
     <div id="content">
         <button onclick="addParagraph()">Add New Paragraph</button>
@@ -82,35 +67,21 @@
             contentDiv.appendChild(newParagraph);
         }
     </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Мой сайт</title>
-    <script>
-        const translations = {
-            'ru': {
-                'welcome': 'Добро пожаловать!',
-                'content': 'Это русская версия сайта.'
-            },
-            'en': {
-                'welcome': 'Welcome!',
-                'content': 'This is the English version of the site.'
-            }
-        };
+    <style>
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 4px solid #00FFFFs;
+}
+</style>
 
-        function setLanguage(lang) {
-            document.getElementById('welcome').innerText = translations[lang].welcome;
-            document.getElementById('content').innerText = translations[lang].content;
-        }
-    </script>
-</head>
-<body onload="setLanguage('ru')">
-    <h1 id="welcome"></h1>
-    <p id="content"></p>
-    <button onclick="setLanguage('ru')">Русский</button>
-    <button onclick="setLanguage('en')">English</button>
+
+<div class="fixed">
+<a href="https://www.instagram.com/megakartoxa?igsh=MTNicGUwZ2Q4N3VvOQ%3D%3D&utm_source=qr" target="_blank">My Instagram page</a>;
+
+</div>
+
 </body>
 </html>
