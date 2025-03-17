@@ -1,0 +1,25 @@
+const translations = {
+    'ru': {
+        'welcome': 'Добро пожаловать!',
+        'content': 'Это русская версия сайта.',
+        'themeToggle': 'Переключить тему'
+    },
+    'en': {
+        'welcome': 'Welcome!',
+        'content': 'This is the English version of the site.',
+        'themeToggle': 'Toggle Theme'
+    }
+};
+
+function setLanguage(lang) {
+    document.getElementById('welcome').innerText = translations[lang].welcome;
+    document.getElementById('content').innerText = translations[lang].content;
+    document.getElementById('theme-toggle').innerText = translations[lang].themeToggle;
+}
+
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const themeLink = document.getElementById('theme-link');
+    const currentTheme = themeLink.getAttribute('href');
+    const newTheme = currentTheme === 'light-theme.css' ? 'dark-theme.css' : 'light-theme.css';
+    themeLink.setAttribute('href', newTheme);
+});
